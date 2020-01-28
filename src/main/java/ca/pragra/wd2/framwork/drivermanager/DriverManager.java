@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
-    private WebDriver driver;
+    private static WebDriver driver;
     private static DriverManager driverManager;
 
     private DriverManager() {
@@ -25,9 +25,9 @@ public class DriverManager {
     }
 
     public static WebDriver getDriverInstance(){
-        if(driverManager==null){
+        if(driver==null){
             driverManager = new DriverManager();
         }
-        return driverManager.driver;
+        return driver;
     }
 }
