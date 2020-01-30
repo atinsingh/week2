@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="ZoomTestingSuite1">
+    <listeners>
+        <listener class-name="listener.ReportListener"></listener>
+    </listeners>
+    <test name="Regression/Release10">
+        <classes>
+            <class name="DummyTest"></class>
+        </classes>
+    </test>
+</suite>

@@ -31,9 +31,11 @@ public class Utility {
       Path path = Paths.get(FrameworkConfig.getProperty("screenshot.dir"));
         try {
             Files.createDirectories(path);
+            Files.createDirectories(Paths.get(FrameworkConfig.getProperty("report.dir")));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public static void captureScreenShot(WebDriver driver, String testName){
@@ -44,5 +46,14 @@ public class Utility {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public static File getReportFileName(){
+        createDirs();
+        String fileName = "TestReport"+"_"+getTimeStamp()+".html";
+        Path path =
+                Paths.get(FrameworkConfig.getProperty("report.dir"), fileName);
+        return path.toFile();
     }
 }

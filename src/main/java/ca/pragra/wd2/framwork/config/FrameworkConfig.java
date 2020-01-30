@@ -32,4 +32,10 @@ public class FrameworkConfig {
 //        }
         return properties.getProperty(key);
     }
+
+    public static void setProperty(String key, String val){
+        if(properties!=null){
+            properties.setProperty(key,val);
+        }
+    }
 }
